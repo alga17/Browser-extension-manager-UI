@@ -1,0 +1,346 @@
+:root {
+--Neutral-900: hsl(227, 75%, 14%);
+--Neutral-800: hsl(226, 25%, 17%);
+--Neutral-700: hsl(225, 23%, 24%);
+--Neutral-600: hsl(226, 11%, 37%);
+--Neutral-300: hsl(0, 0%, 78%);
+--Neutral-200: hsl(217, 61%, 90%);
+--Neutral-100: hsl(0, 0%, 93%);
+--Neutral-0: hsl(200, 60%, 99%);
+--Red-400: hsl(3, 86%, 64%);
+--Red-500: hsl(3, 71%, 56%);
+--Red-700: hsl(3, 77%, 44%);
+--Light-Gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+--Dark-Gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+};
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+
+}
+
+body {
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: var(--Dark-Gradient);
+    font-family: "Noto Sans", sans-serif;
+}
+
+
+header {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1165px;
+    margin-top: 35px;
+    width: 100%;
+    height: 70px;
+    border-radius: 15px;
+    background-color: var(--Neutral-800);
+    border: 1px solid var(--Neutral-800);
+    padding: 0 15px;
+}
+
+.logo {
+    height: 40px;
+}
+
+.button-switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: none;
+    height: 50px;
+    width: 50px;
+    background-color: var(--Neutral-700);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button-switch:hover {
+    background-color: var(--Neutral-600);
+}
+
+.extensions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1165px;
+    width: 100%;
+    margin-top: 70px;
+}
+
+.extensions-block-big-text {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 600;
+    color: white;
+}
+
+.switch-block {
+    display: flex;
+    gap: 15px;
+}
+
+
+.switch-element {
+    box-sizing: border-box;
+    color: white;
+    background-color: var(--Neutral-700);
+    border: 1px solid var(--Neutral-600);
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.switch-element.onn {
+    background-color: var(--Red-400);
+    color: black;
+}
+
+.grid-container {
+    margin-top: 30px;
+    display: grid;
+    grid-template-rows: repeat(4, 200px);
+    grid-template-columns: repeat(3, 380px);
+    gap: 10px;
+}
+
+.element {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: start;
+    background-color: var(--Neutral-800);
+    border-radius: 20px;
+    box-sizing: border-box;
+    border: 1px solid var(--Neutral-600);
+}
+
+.image-logo {
+    width: 60px;
+}
+
+.image-block {
+    display: flex;
+}
+
+.name-block {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    gap: 10px;
+}
+
+.name-text {
+    font-size: 17px;
+    color: white;
+    font-weight: 600;
+}
+
+.des-text {
+    font-size: 15px;
+    color: var(--Neutral-300);
+    font-weight: 400;
+
+}
+
+/* Контейнер переключателя */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;       
+    height: 24px;      
+}
+
+/* Скрываем стандартный чекбокс */
+.toggle-input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Слайдер (фон) */
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--Neutral-600);  /* серый для выключенного состояния */
+    transition: 0.3s;
+    border-radius: 34px;
+}
+
+/* Круглая ручка */
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+}
+
+/* Активное состояние (чекбокс включён) */
+.toggle-input:checked + .toggle-slider {
+    background-color: var(--Red-400);   /* красный */
+}
+
+/* Сдвиг ручки при включении */
+.toggle-input:checked + .toggle-slider:before {
+    transform: translateX(20px);
+}
+
+.remove-block {
+    display: flex;
+    width: 100%;
+    margin-top: auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remove {
+    box-sizing: border-box;
+    color: white;
+    background-color: transparent;
+    border: 1px solid var(--Neutral-600);
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.remove:hover {
+    background-color: var(--Neutral-600);
+}
+
+.remove:active {
+    background-color: var(--Red-400);
+    color: black;
+}
+
+.switch-element:hover {
+    background-color: var(--Neutral-600);
+    
+}
+
+.switch-element.onn:hover {
+    background-color: var(--Red-700);
+}
+
+.onn {
+    border-color: var(--Red-700);
+}
+
+/* белая тема */
+
+body.white {
+    background-image: var(--Light-Gradient)
+}
+
+header.white {
+    background-color: var(--Neutral-0);
+    border-color: var(--Neutral-200);
+}
+
+.button-switch.white {
+    background-color: var(--Neutral-100);
+}
+
+.button-switch.white:hover {
+    background-color: var(--Neutral-200);
+}
+
+.extensions-block-big-text.white {
+    color: var(--Neutral-900);
+}
+
+.switch-element.white {
+    background-color: white;
+    color: var(--Neutral-900);
+    border-color: var(--Neutral-300);
+}
+
+.switch-element.white:hover {
+    background-color: var(--Neutral-100);
+}
+
+.switch-element.white.onn {
+    background-color: var(--Red-700);
+    border-color: var(--Red-700);
+    color: white;
+}
+
+.switch-element.white.onn:hover {
+    background-color: var(--Red-500);
+}
+
+.element.white {
+    background-color: var(--Neutral-0);
+    border-color: var(--Neutral-300);
+}
+
+.element.white .name-text {
+    color: var(--Neutral-900);
+}
+
+.element.white .des-text {
+    color: var(--Neutral-600);
+}
+
+.element.white .remove {
+    color: var(--Neutral-900);
+    border-color: var(--Neutral-300);
+}
+
+.element.white .remove:hover {
+    background-color: var(--Neutral-100);
+}
+
+.element.white .toggle-slider {
+    background-color: var(--Neutral-200);  /* серый для выключенного состояния */
+}
+
+.element.white .toggle-input:checked + .toggle-slider {
+    background-color: var(--Red-700);   /* красный */
+}
+
+.element.white .remove:hover:active {
+    background-color: var(--Red-700);
+    color: white;
+}
+
+.element {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.element:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.switch-element {
+    transition: all 0.2s ease;
+}
+
+.switch-element:active {
+    transform: scale(0.95);
+}
